@@ -1,0 +1,154 @@
+@import "_mixins/kerning"
+	
+$default-font: "raleway-wh", sans-serif
+$color: #F9C869 //Theme skin
+$text: #888
+$main_color: #222
+$bg_light: #FAFAFA
+$accent: #F9C869
+$order_color: #33CCFF
+$over: #3d3c3c
+
+body
+	color: $main_color
+
+a
+	color: $color
+
+p,
+body .main_footer,
+.s_about li
+	color: $text
+
+.color_element
+	color: $color
+.color_bg
+	background-color: $color
+.color_border
+	border-color: $color
+
+.bg_light
+	background-color: $bg_light
+.bg_dark
+	background-color: $main_color
+	color: #fff
+	.s_descr::after
+		background-color: #fff
+	a
+		color: #fff
+	.button-news
+		color: $text
+
+.top_mnu
+	a:hover
+		color: $color
+	a
+		+kerning(4)
+
+.top_text
+	p
+		color: $bg_light
+		+kerning(5)	
+
+.personal_header
+	+kerning(2)
+
+.s_descr
+	+kerning(4)
+	&::after
+		background-color: $main_color
+
+.section
+	h3
+		+kerning(3)
+		color: $text
+
+.s_about
+	p:nth-child(even)
+		color: $text
+
+.resume_container
+	h3
+		color: $main_color
+		+kerning(1)
+		font-size: 16px
+		font-weight: 600
+
+.resume_item
+	.year
+		background-color: $color
+		color: #fff
+	.resume_description
+		+kerning(1)
+
+.order_color
+	background-color: $order_color
+	
+.s_order	
+	h1
+		color: $main_color
+		+kerning(1)
+		font-size: 30px
+		font-weight: 600
+		text-align: center
+
+.s_portfolio
+	li
+		color: $text
+		+kerning(2)
+	li.active
+		color: #fff
+		border-bottom: 1px solid $color
+
+.portfolio_item .port_item_cont
+	a
+		border-color: $color
+		color: $color
+
+.main_footer a
+	color: $color
+
+.contacts_icon
+	color: $color
+
+.text-danger
+	color: $color
+
+.form
+	input:focus,
+	textarea:focus
+		border: 1px solid $color
+		background-color: $order_color 
+	input,
+	textarea
+		+kerning(2)
+	button
+		background-color: $color
+		+kerning(2)
+	.form-group
+		+kerning(2)
+		color: $text
+
+.popup_content
+	+kerning(1)
+
+.button
+	color: $text
+	border: 1px solid $main_color
+	box-shadow: 0 4px 0 $text
+	&:hover, &:focus
+		color: $text
+		text-decoration: none
+	&:hover
+		background-color: $bg-light
+	&:active 
+		background-color: $bg-light
+		transform: translateY(2px)	
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px
+$grid-columns: 12
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+
+$gutter: $grid-gutter-width

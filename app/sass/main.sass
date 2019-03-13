@@ -1,0 +1,1176 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.hidden
+	display: none
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+h1
+	a
+		
+.bg_dark
+	background-color: $main_color
+	color: #fff
+	.s_descr::after
+		background-color: #fff
+	a
+		color: #fff
+		
+section,
+.main_head
+	position: relative
+	h1
+		text-align: center
+		text-transform: uppercase
+		font-weight: 400
+		font-size: 14px
+		margin-top: 0
+		margin-bottom: 35px
+		a 
+			text-decoration: none
+			color: #fff
+			&:hover
+				text-decoration: none
+				color: #ffffff
+
+.info
+	p 
+		padding: 20px 20px
+		text-align: center
+		font-size: 18px
+
+.s_about
+	p
+		margin-bottom: 25px
+		text-align: justify
+		-webkit-text-align: justify
+		a
+			text-decoration: none
+			color: $text
+	ul,
+	li
+		margin: 0
+		padding: 0
+		list-style-type: none
+		text-align: justify
+		-webkit-text-align: justify
+		font-size: 13px
+	li
+		margin-bottom: 10px
+
+section
+	padding: 50px 0 90px
+	h2
+		text-align: center
+		font-size: 24px
+		text-transform: uppercase
+		margin: 0 0 15px
+		letter-spacing: 1px
+	.personal_header
+		font-size: 13px
+		text-align: left
+		margin-bottom: 30px
+		color: #555
+
+.s_descr_wrap
+	text-align: center
+	.s_descr
+		display: inline-block
+		text-transform: uppercase
+		font-size: 12px
+		position: relative
+		margin-bottom: 40px
+		font-weight: 600
+		margin-top: 10px
+		&::after
+			content: ""
+			height: 1px
+			left: 50%
+			margin-left: -75px
+			margin-top: -15px
+			position: absolute
+			width: 150px
+			background-color: $main_color
+
+.main_head
+	min-height: 100vh
+	padding-top: 20px
+	position: relative
+
+.page_head
+	padding-top: 20px
+	position: relative
+	height: 100px
+	
+.img-logo
+	display: inline-block
+	padding-right: $gutter
+	position: absolute
+	right: 70px
+	top: 15px
+	z-index: 100
+.lang	
+	display: inline-block
+	position: absolute
+	top: 35px
+	right: 45px
+	z-index: 100
+
+.main-mnu
+	padding: 0 100px
+	width: 100%
+	text-align: center
+	z-index: 100
+	position: relative
+	ul, li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+		margin-right: -10px
+		&.active
+			a
+				color: #ffffff
+				background-color: lighten($accent, 5%)
+		&:hover
+			a
+				color: #ffffff
+				background-color: lighten($accent, 8%)
+				cursor: pointer
+		a
+			color: #000
+			text-decoration: none
+			text-transform: uppercase
+			font-size: 18px
+			font-weight: 600
+			padding: 0 13px
+			line-height: 60px
+			display: block
+			transition: color .25s ease, background-color .25s ease
+			&:hover
+				text-decoration: none
+
+
+
+.toggle_mnu
+	width: 60px
+	height: 60px
+	position: fixed
+	z-index: 100
+	border: none
+	left: 20px
+	top: 20px
+	&:focus
+		outline: none
+	span
+		display: block
+
+$w: 28px
+$h: 3px
+
+.sandwich 
+	width: $w
+	height: $w
+	position: absolute
+	top: 8px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	z-index: 200
+
+.sw-topper
+	position: relative
+	top: 0
+	width: $w 
+	height: $h
+	background: rgb(255, 255, 255)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	display: block
+			
+	//transition-delay: 0.2s, 0s
+
+.sw-bottom
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 2.2
+	background: rgb(255, 255, 255)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+.sw-footer
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 4.5
+	background: rgb(255, 255, 255)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active
+	.sw-topper
+		top: 9px
+		transform: rotate(-45deg)
+	.sw-bottom
+		top: 6px
+		transform: rotate(45deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+.top_mnu
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,.85)
+	z-index: 50
+	right: 0
+	top: 0
+	display: none
+	ul,
+	li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	ul
+		margin-top: 180px
+		text-align: center
+		+animation-duration(.01s)
+		li
+			&:nth-child(1) a
+				+animation-delay(0)
+			&:nth-child(2) a
+				+animation-delay(.1s)
+			&:nth-child(3) a
+				+animation-delay(.2s)
+			&:nth-child(4) a
+				+animation-delay(.3s)
+		a
+			color: #fff
+			display: block
+			text-transform: uppercase
+			font-size: 12px
+			opacity: 0
+			position: relative
+			height: 60px
+			outline: none
+			&:hover
+				text-decoration: none
+			span
+				display: block
+				position: relative
+				top: -40px
+				left: 0
+				height: 100%
+				+transition(all 0.5s ease)
+				&:hover
+					background-color: rgba(255,255,255,.08)
+
+.top_wrapper
+	display: table
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 10
+	.top_descr
+		display: table-row
+		.top_centered
+			display: table-cell
+			text-align: center
+			vertical-align: middle
+	.top_text
+		display: inline-block
+		+transition(all 1s ease)
+		margin-bottom: 100px
+		p
+			margin: 0
+			text-transform: uppercase
+			+animation-delay(1s)
+		h1
+			display: inline-block
+			padding: 10px 35px
+			color: #fff
+			border: 8px solid #fff
+			text-transform: uppercase
+			font-weight: bold
+			font-size: 2.8em
+			background-color: rgba(0,0,0,.6)
+			margin-left: 20px
+			margin-right: 20px
+			+animation-delay(.5s)
+
+.toggle_mnu
+	background-color: #000
+
+.s-services
+	padding: 0
+.carousel-services
+	
+	&-item
+		background-color: #ffffff
+		color: #000
+		font-size: 18px
+		font-weight: 300
+		position: relatived
+		display: flex
+		flex-direction: column-reverse
+		transition: background-color .5s ease
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		&:hover
+			background-color: $accent
+		&:hover .button
+			background-color: $bg-light
+ 
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .5
+		transition: opacity .5s ease
+
+	&-content
+		position: relative
+		padding: 60px 10%
+	
+	&-composition
+		margin: auto
+		text-align: center
+		display: block
+		width: 100%
+		.h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			margin-bottom: 20px
+			span
+				font-weight: normal
+				font-size: 18px
+				font-weight: 300
+				display: block
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 25px
+		li 
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans-ex, sans-serif
+				color: #4a4a4a
+			.fa 
+				font-size: 14px
+.button
+	display: inline-block
+	border: none
+	margin-top: 10px
+	font-size: em(14px)
+	letter-spacing: 2px
+	text-transform: uppercase
+	padding: 13px 34px
+	border-radius: 3px
+	transition: all .15s ease
+
+
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev
+	position: absolute
+	font-family: fontawesome
+	top: 46.5%
+	width: 100%
+	width: 64px
+	height: 64px
+	text-align: center
+	line-height: 64px
+	font-size: 26px
+	background-color: #000
+	color: #ffffff	
+	&:hover
+		color: $accent
+.owl-carousel .owl-nav button.owl-next
+	right: 0
+.owl-carousel .owl-nav button.owl-prev
+	left: 0
+
+.person
+	text-align: center
+	margin-bottom: 15px
+	img
+		max-width: 60px
+		display: inline-block	
+		height: 60px
+
+.social_wrap
+	margin-top: 25px
+	li
+		display: inline-block
+		font-size: 20px
+		padding: 0 3px		
+
+.s_resume
+	.left .resume-description strong
+		font-size: 13px
+		margin-left: 10px
+		letter-spacing: 2px
+	.right .resume-description strong
+		font-size: 13px
+		margin-right: 10px
+		letter-spacing: 2px
+	.left
+		text-align: center
+		border-right: #d2d2d2 1px solid
+	.right
+		text-align: center
+	strong
+		font-weight: 600
+		font-style: normal
+		text-transform: uppercase
+	.resume-item
+		margin-bottom: 10px
+		text-align: center
+		img
+			max-width: 60px
+			display: inline-block	
+			height: 60px
+		p
+			margin-top: 10px
+			
+		&:last-child
+			margin-bottom: 0
+			p
+				margin-bottom: 0
+.resume-icon
+	font-size: 40px
+	margin-bottom: 20px
+
+.carousel-sale
+	&-item
+		background-color: $bg-light
+		color: #000
+		font-size: 18px
+		font-weight: 300
+		position: relatived
+		text-align: center
+		vertical-align: middle
+		padding: 15px 40px
+		.person
+			padding: 15px 0
+			img
+				margin: auto
+	
+
+.s_portfolio
+	.controls
+		margin: 0 auto
+	li
+		display: inline-block
+		margin: 0 10px
+		text-transform: uppercase
+		font-size: 12px
+		cursor: pointer
+		line-height: 2
+	ul
+		margin-bottom: 50px
+
+.portfolio_item
+	//display: none
+	padding: 0
+	img
+		width: 100%
+	.port_item_cont
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		font-size: 12px
+		background-color: rgba(0,0,0,.8)
+		text-align: center
+		padding-top: 15%
+		opacity: 0
+		transition: all .5s
+	&:hover .port_item_cont
+		opacity: 1
+		padding-top: 20%
+	h3
+		color: #fff
+		margin-bottom: 0
+	a
+		background-color: transparent
+		border: #fff 1px solid
+		padding: 2px 10px
+		display: inline-block
+		text-decoration: none 
+
+.podrt_descr
+	background-color: #fff
+	max-width: 500px
+	margin: auto
+	p,
+	h3
+		padding: 20px
+		padding-bottom: 0
+	h3
+		margin-bottom: 0
+		text-align: center
+		text-transform: uppercase
+		font-weight: 400
+		margin-top: 20px
+		padding-top: 25px
+	p
+		margin-top: 0
+	img
+		width: 100%
+		margin-top: 10px
+
+.section-overley
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $over
+		opacity: .92
+
+.reviews
+	text-align: center
+.reviews, .carousel-sale
+	.owl-dots
+		width: 100%
+		text-align: center
+		margin-top: 60px
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: $main-color
+			border-radius: 10em
+			display: inline-block
+			margin: 5px
+			transition: background-color .5s ease, transform .5s ease
+			&.active
+				background-color: $accent
+				transform: scale(1.3)
+
+.review
+	margin-top: 20px
+	&-header
+		font-size: 30px
+		font-weight: bold
+	&-date
+		font-size: 15px
+		color: #888
+	&-stars
+		margin: 18px 0 30px
+		font-size: 14px
+		color: $accent
+		.fa
+			margin: 0 2.5px
+	&-text
+		color: $text
+
+
+.quotes
+	position: absolute
+	width: 100%
+	&::before, &::after
+		content: ',,'
+		position: absolute
+		top: 145px
+		font-size: 56px
+		color: $main-color
+		font-family: "Times New Roman", serif
+		font-weight: bold
+		line-height: 0
+		transform: rotate(180deg)
+		display: block
+	&::before
+		top: 183px
+		left: -60px
+	&::after
+		right: -60px
+		transform: rotate(0)
+
+
+.contact_box
+	margin-bottom: 30px
+	h3
+		text-align: left
+		color: #000
+		margin-bottom: 0px
+		font-size: 14px
+		
+	.contacts_icon
+		font-size: 30px
+	p
+		margin-top: 5px
+		a
+			text-decoration: none
+			color: $text
+			.fa
+				font-size: 25px
+	
+
+.main_form
+	h3
+		padding-left: 50px
+		margin-top: -20px
+	button
+		border: none
+		color: #fff
+		line-height: 40px
+		padding: 0 25px
+		font-size: 13px
+		text-transform: uppercase
+		font-weight: 600
+		margin-top: 10px
+		float: right
+.form-group
+	display: block
+	margin-bottom: 20px
+	.color_element
+		font-weight: 700
+		font-size: 18px
+	.text-danger
+		font-size: 11px
+		margin-top: 5px
+		display: block
+		ul,
+		li
+			margin: 0
+			padding: 0
+			list-style-type: none
+	input,
+	textarea
+		display: block
+		width: 100%
+		border: 1px solid #ccc
+		margin-top: 5px
+		line-height: 40px
+		text-indent: 12px
+		font-size: 12px
+		background-color: transparent
+
+form
+	border: medium none
+	border-radius: 8px
+	padding: 50px 20px
+	background-color: $color
+	max-width: 500px
+	margin: auto
+	position: relative
+	
+form input
+	width: 100%
+	line-height: 35px
+	margin-bottom: 20px
+	border-radius: 5px
+	padding-left: 25px
+	&::-webkit-input-placeholder
+		color: #b7b7b7
+		opacity: 1
+	&::-moz-placeholder
+		color: #b7b7b7
+		opacity: 1
+	&::-ms-input-placeholder
+		color: #b7b7b7
+		opacity: 1
+
+input.textarea:focus
+	color: #ccc !important
+
+.form button 
+	border: none
+	border-radius: 4px
+	color: #fff
+	line-height: 40px
+	padding: 0 25px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	margin-top: 10px
+	float: none
+
+.form h2
+	padding-top: 50px
+	margin-top: -20px
+
+.form_2 h2
+	padding-top: 10px
+	text-align: center
+
+.s_map 
+	padding-top: 40px 
+	padding-bottom: 0
+
+.long_booking
+	position: relative
+	text-align: center
+	margin-bottom: 50px
+.button
+	display: inline-block
+	border: none
+	margin-top: 10px
+	font-size: em(14px)
+	letter-spacing: 2px
+	text-transform: uppercase
+	padding: 13px 34px
+	border-radius: 3px
+	transition: all .15s ease
+
+.main_footer
+	padding: 50px 0
+	font-size: 15px
+	font-weight: 300
+	img
+		margin-left: 100px
+	.social_wrap
+		float: right
+		line-height: 0
+		margin-top: 0
+		ul
+			margin: 0
+			li
+				margin-left: 15px
+				font-size: 20px
+			
+
+
+.col-item
+	margin: 12px 0 15px
+	a
+		text-decoration: none
+		transition: color .25s ease
+		&:hover, &.hover
+			text-decoration: underline
+	h4
+		font-size: 15px
+		font-weight: normal
+		margin: 0
+		line-height: 1.35
+		margin-top: 25px
+		
+.col-item-dark
+		a
+			color: #a4a7ab
+			&:hover, &.hover
+				color: $text
+
+.button-news
+	margin: 45px auto 0 auto
+	display: inline-block
+	border: none
+	color: $text
+	text-decoration: none
+	background-color: $bg-light
+	padding: 12px 40px
+	font-size: 14px
+	text-transform: uppercase
+	font-weight: 600
+	border-radius: 10em
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	transition: background-color .1s ease
+	&:hover, &:focus
+		text-decoration: none
+		color: $text
+	&:hover
+		background-color: lighten($accent, 5%)
+	&:active
+		background-color: darken($accent, 5%)
+
+.all-posts-header
+	text-transform: uppercase
+	font-weight: bold
+	text-decoration: underline
+	text-align: center
+
+.cat-list	
+	padding-top: $gutter
+	background-color: #ffffff
+
+a.cat-list-item
+	color: $text
+	display: block
+	text-decoration: none
+	margin: 
+		bottom: $gutter/1.5
+		top: $gutter/1.5
+	padding-bottom: 4px
+	border-bottom: 1px solid #dfdfdf
+	h2, h3 
+		transition: color .25s ease 
+		line-height: 1.2
+		font-size: 21px
+		font-weight: 800
+		margin: 0
+	img 
+		transition: opacity .25s ease
+		margin-bottom: 12px
+	p
+		font-size: 15.4px
+		margin-top: 10px
+	.date
+		margin-top: 5px
+	&:hover
+		.pattern
+			&:before
+				top: 10px
+				right: 10px
+				bottom: 10px
+				left: 10px
+				opacity: 0.2
+				z-index: 10
+			img
+				opacity: 0.75
+		h2, h3
+			text-decoration: underline
+			color: $accent
+		p
+			color: $text
+	&:last-child
+		border-bottom: none
+
+.main-aside
+	margin-bottom: $gutter
+
+.pagination
+	padding-top: 12px
+	a, span
+		display: inline-block
+		margin-top: 5px
+		width: 42px
+		height: 42px
+		line-height: 40px
+		border: 2px solid $text
+		border-radius: 10em
+		font-size: 18px
+		font-weight: 800
+		text-decoration: none
+		color: $text
+		transition: border-color .25s ease, color .25s ease
+	a
+		&:hover
+			border-color: $accent
+			color: $accent
+		&.pagination-left, &.pagination-right
+			color: $accent
+	span
+		&.active
+			border-color: $accent
+			color: $accent
+	.pagination-left, .pagination-right
+		border: none
+		font-size: 32px
+		width: 30px
+.button-border
+	border: 2px solid $text
+
+.news_head
+	padding-top: 20px
+	&.overlay
+		&::before
+			opacity: 1
+			background-color: transparent
+			background-image: linear-gradient(rgba(#000, .2), rgba(#000, .7))
+		height: 80vh
+		min-height: 460px
+		color: #ffffff
+		position: relative
+
+.ispage
+	.top-line
+		position: absolute
+		z-index: 1
+		width: 100%
+
+.overlay
+	background-size: cover
+	background-position: center
+	position: relative
+	display: block
+	&::before
+		content: ''
+		background-color: $bg_light
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0.55
+		transition: opacity .25s ease
+	&:hover
+		&::before
+			opacity: 0.75
+
+.page-header
+	&-content
+		position: absolute
+		width: 100%
+		bottom: 15%
+	&-meta
+		> *
+			display: inline-block
+		.date
+			color: #ffffff
+			font-size: 15px
+		h1
+			font-size: 32px
+			line-height: 1.2
+			margin: 15px 0
+			display: block
+		.item-comments-count
+			color: #ffffff
+
+.container-fluid
+	max-width: 1200px
+	padding: 0 $gutter
+
+.page-category-link
+	font-size: 14px
+	text-transform: uppercase
+	color: #ffffff
+	background-color: $accent
+	padding: 1px 6px
+	text-decoration: none
+	font-weight: 800
+	margin-right: 5px
+	&:hover, &:focus
+		color: #ffffff
+		text-decoration: none
+
+.article-content
+	padding: $gutter*1.8 0
+	background-color: #ffffff
+
+.article-top-ad
+	margin: $gutter 0
+
+.breadcrumbs
+	margin-bottom: 15px
+	margin-left: -10px
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	li
+		display: inline-block
+		font-size: 16px
+		a
+			display: inline-block
+			padding: 0 10px
+			position: relative
+			&::after
+				content: '»'
+				position: absolute
+				right: -6px
+				color: #cccccc
+			&:hover
+				color: $text
+				text-decoration: none
+		&.active
+			padding-left: 10px
+			color: #888888
+
+.article-body
+	p
+		margin: 25px 0
+		line-height: 1.3
+	img
+		display: block
+		max-width: 100%
+		height: auto
+		margin: auto
+	h2, h3, h4, h5, h6
+		line-height: 1.2
+	blockquote
+		padding: $gutter
+		margin: $gutter*2 $gutter*2.5
+		font-size: 20px
+		color: #000
+		border: 
+			top: $accent 2px solid
+			bottom: $accent 2px solid
+	ul, ol 
+		padding-left: $gutter
+		li
+			margin: 10px 0
+		.video
+			margin: $gutter 0
+
+.video
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+	iframe
+		border: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%!important
+		height: 100%!important
+
+.read-more
+	margin-bottom: $gutter
+	&-header
+		font-size: 21px
+		font-weight: 800
+		margin: $gutter*1.5 $gutter/2 0
+	ul, li 
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		line-height: 1.3
+		display: inline-block
+		color: #151515
+		transition: color .25s ease
+		margin: 8px 0
+		&:hover
+			color: $accent
+
+.cat-header
+	background-size: cover
+	background-position: center
+	position: relative
+	&::before
+		content: ''
+		opacity: 0.25
+		background-color: #000000
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&-block
+		position: relative
+		padding: 100px 80px 100px
+		color: #ffffff
+		background-color: rgba($dark, .8)
+		&::before
+			content: ''
+			opacity: 0.2
+			transition: opacity .25s ease, top .25s ease, left .25s ease, bottom .25s ease, right .25s ease
+			z-index: 1
+			position: absolute
+			border: 1px solid #fff
+			top: 10px
+			right: 10px
+			bottom: 10px
+			left: 10px
+		p, h1, h2
+			margin: 0
+		h1, h2
+			font-size: 30px
+			text-transform: uppercase
+			margin-bottom: 15px
+	&.overlay
+		&:hover
+			&::before
+				opacity: 0.25
+
+.cat-list-first
+	padding-top: $gutter
+	background-color: #f5f5f5
+
+.type-one-cat	
+	background-color: transparent	
+	padding: 0
+
+.pattern
+	background-color: $dark
+	position: relative
+	display: block
+	&::before
+		content: ''
+		transition: opacity .25s ease, top .25s ease, left .25s ease, bottom .25s ease, right .25s ease
+		z-index: 1
+		position: absolute
+		border: #fff solid 1px
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		opacity: 0
+	&:hover
+		&::before
+			opacity: 0.2
+			top: 10px
+			right: 10px
+			bottom: 10px
+			left: 10px
+		.overlay
+			&::before
+				opacity: 0.75
+	&-cat-header
+		&::before
+			display: none
+
+.item-title-white
+	.date
+		font-size: 13px
+		display: inline-block
+		margin-left: 20px
+		color: #ffffff
+	.item-title
+		min-height: 230px
+		&-content
+			padding: 40px 40px 25px
+
+@import "media" // Always at the end
