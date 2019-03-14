@@ -77,6 +77,7 @@ $(function() {
 	//Resize Window 
 	function onResize() {
 		$('.carousel-services-content').equalHeights();
+		$('.mobile-composition').equalHeights();
 	}onResize();
 	window.resize = function() {onResize()}; 
 
